@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+
+        }
+
+        .inner-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            padding: 30px;
+            border: 1px solid black;
+        }
+        p{
+            text-align: center;
+            font-size: 24px;
+
+        }
+        .buttons-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .button{
+            background-color: rgb(235, 54, 211);
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0 10px rgb(255, 65, 96);
+            box-shadow: 0 0 14px rgb(197, 53, 96);
+            color: white;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <img src="images/cute-bite.gif" alt="">
+            <p>Do you love me ?</p>
+            <div class="buttons-container">
+                <button class="yes button"><a href="yes.html">Yes</a></button>
+                <button class="no button">No</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+        const no = document.querySelector('.no');
+        const btnContainer = document.querySelector('.buttons-container');
+        no.addEventListener('mouseover', ()=>{
+            const newX = Math.floor(Math.random() * (btnContainer.offsetWidth ));
+            const newY = Math.floor(Math.random() * (btnContainer.offsetWidth ));
+            no.style.position = 'absolute';
+            no.style.left = newX + 'px';
+            no.style.top = newY + 'px';
+        })
+</script>
+</html>
